@@ -1,6 +1,6 @@
 from src.api import get_crypto_price, get_historical_price
 from src.plotting import plot_with_matplotlib, plot_with_plotly
-#from src.utils import format_price (اگر فایل utils.py را داشتید)
+
 
 def main():
     coin_name = input("Enter the cryptocurrency name (e.g., bitcoin): ").lower()
@@ -8,8 +8,7 @@ def main():
 
     if isinstance(price, float):
       print(f"The current price of {coin_name.capitalize()} is: ${price}")
-      #formatted_price = format_price(price) # مثال استفاده از تابع format_price
-      #print(f"Formatted price: {formatted_price}")
+
     elif isinstance(price, str):
         print(price)
         return #اگر کوین پیدا نشد از تابع خارج شود

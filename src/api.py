@@ -6,7 +6,7 @@ def get_crypto_price(coin):
     url = f"https://api.coingecko.com/api/v3/simple/price?ids={coin}&vs_currencies=usd"
     try:
         response = requests.get(url)
-        response.raise_for_status()  # بررسی وضعیت کد HTTP (خطاها)
+        response.raise_for_status()
         data = response.json()
         price = data[coin]['usd']
         return price
