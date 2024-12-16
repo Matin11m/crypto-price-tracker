@@ -5,7 +5,7 @@
 ## نحوه نصب
 
 1. ابتدا پایتون رو نصب کنید.
-2. این repository رو clone کنید: `git clone https://github.com/your-username/crypto-price-tracker.git`
+2. این repository رو clone کنید: `git clone https://github.com/Matin11m/crypto-price-tracker.git`
 3. به پوشه پروژه برید: `cd crypto-price-tracker`
 4. کتابخانه‌های مورد نیاز رو نصب کنید: `pip install -r requirements.txt`
 
