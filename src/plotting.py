@@ -2,11 +2,14 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import pandas as pd
 
+
 def plot_with_matplotlib(coin_name, historical_data):
-    """رسم نمودار با matplotlib."""
+    """
+    Plot chart with matplotlib.
+    """
     if historical_data is None or not historical_data:
-      print('No Historical Data Found')
-      return
+        print('No Historical Data Found')
+        return
     df = pd.DataFrame(historical_data, columns=['timestamp', 'price'])
     df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
     plt.figure(figsize=(12, 6))
@@ -21,10 +24,12 @@ def plot_with_matplotlib(coin_name, historical_data):
 
 
 def plot_with_plotly(coin_name, historical_data):
-    """رسم نمودار با Plotly."""
+    """
+    Plot chart with Plotly.
+    """
     if historical_data is None or not historical_data:
-      print('No Historical Data Found')
-      return
+        print('No Historical Data Found')
+        return
     df = pd.DataFrame(historical_data, columns=['timestamp', 'price'])
     df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
     fig = go.Figure(data=[go.Scatter(x=df['timestamp'], y=df['price'])])

@@ -1,8 +1,11 @@
 import requests
 import json
 
+
 def get_crypto_price(coin):
-    """دریافت قیمت لحظه‌ای یک ارز دیجیتال."""
+    """
+    Get the real-time price of a cryptocurrency.
+    """
     url = f"https://api.coingecko.com/api/v3/simple/price?ids={coin}&vs_currencies=usd"
     try:
         response = requests.get(url)
@@ -12,11 +15,14 @@ def get_crypto_price(coin):
         return price
     except requests.exceptions.RequestException as e:
         return f"Error fetching data: {e}"
-    except (KeyError, TypeError): # مدیریت خطای وقتی که کوین پیدا نشه یا داده به فرمت مورد انتظار نباشه
+    except (KeyError, TypeError):  # Handle error when coin is not found or data is not in expected format
         return "Coin not found"
 
+
 def get_historical_price(coin, days=30):
-    """دریافت داده‌های تاریخی قیمت یک ارز دیجیتال."""
+    """
+    Get historical price data of a cryptocurrency.
+    """
     url = f"https://api.coingecko.com/api/v3/coins/{coin}/market_chart?vs_currency=usd&days={days}"
     try:
         response = requests.get(url)

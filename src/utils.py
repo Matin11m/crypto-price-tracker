@@ -1,3 +1,5 @@
 def format_price(price):
-    """فرمت کردن قیمت به صورت رشته با دو رقم اعشار."""
+    """
+    Format the price as a string with two decimal places.
+    """
     return f"{price:.2f}"

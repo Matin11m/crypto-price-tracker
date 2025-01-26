@@ -7,11 +7,11 @@ def main():
     price = get_crypto_price(coin_name)
 
     if isinstance(price, float):
-      print(f"The current price of {coin_name.capitalize()} is: ${price}")
+        print(f"The current price of {coin_name.capitalize()} is: ${price}")
 
     elif isinstance(price, str):
         print(price)
-        return #اگر کوین پیدا نشد از تابع خارج شود
+        return  # Exit the function if the coin is not found
 
     historical_data = get_historical_price(coin_name, 30)
 
@@ -23,6 +23,7 @@ def main():
             plot_with_plotly(coin_name, historical_data)
         else:
             print("Invalid plot library choice.")
+
 
 if __name__ == "__main__":
     main()
